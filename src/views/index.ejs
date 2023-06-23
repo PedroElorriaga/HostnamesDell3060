@@ -1,16 +1,10 @@
 <%- include('./includes/head.ejs')%>
+  <%- include('./includes/nav.ejs')%>
 
-  <section class="container">
-    <h1>
-      <%- titulo %>
-    </h1>
 
-    <form action="/recebidos" method="POST">
-      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-      <input type="hidden" name="message" value="O Valor do Token é: ">
-      <input type="text" name="inputTest" id="">
-      <button>Enviar</button>
-    </form>
-  </section>
-
-  <%- include('./includes/footer.ejs')%>
+    <section class="main-container">
+      <h1>
+        <%- titulo %>
+      </h1>
+    </section>
+    <%- include('./includes/footer.ejs')%>

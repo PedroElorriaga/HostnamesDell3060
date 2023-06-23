@@ -2,10 +2,14 @@
 exports.paginaInicial = (req, res) => {
 
     res.render('index', {
-        titulo: 'Helmet e CSRF'
+        titulo: 'Controle de Hostames DELL 3060'
     })
 }
 
 exports.recebidos = (req, res) => {
     res.send(req.body.message + req.body._csrf)
+}
+
+exports.teste = (req, res) => {
+    res.render('teste')
 }
