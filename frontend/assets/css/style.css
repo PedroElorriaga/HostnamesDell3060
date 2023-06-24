@@ -76,7 +76,7 @@ img {
 
 .conteudo-tabela .alerta-centro.erro {
     background-color: rgba(250, 128, 114, 0.315);
-    width: 40em;
+    width: 70%;
     height: 4em;
     margin: auto auto;
     border: 1px solid rgba(250, 128, 114, 0.452);
@@ -96,10 +96,9 @@ img {
 }
 
 .tabela-hosts .tabela-centro.content {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
-    border-bottom: 1px solid gray;
-    border-top: 1px solid gray;
+    border-collapse: collapse;
 }
 
 /* TODO BORDAS EM CADA TR DA TABELA */
@@ -108,5 +107,7 @@ img {
 }
 
 .tabela-hosts .tabela-centro.content .tabela-infos td {
-    
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 20px;
 }
