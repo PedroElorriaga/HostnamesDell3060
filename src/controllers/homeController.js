@@ -2,7 +2,7 @@
 exports.paginaInicial = (req, res) => {
 
     res.render('index', {
-        titulo: 'Controle de Hostames DELL 3060'
+        titulo: 'Hostnames DELL 3060'
     })
 }
 

@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 :root {
   --primary-color: rgb(88, 56, 109);
+  --primary-color-dark: rgb(72, 0, 121);
   --second-color: rgb(212, 212, 212);
+  --letter-spacing: 0.1em;
 }
 
 * {
@@ -20,28 +22,91 @@ a {
     
 }
 
-.nav-bar ul {
-    text-decoration: none;
-    list-style-type: none;
-    padding: 10px;
+img {
+    z-index: 99999;
+}
+
+.nav-bar {
     background-image: linear-gradient(to left, var(--primary-color) 3%, var(--second-color) 100%);
     border-bottom: 1px solid rgba(0, 0, 0, 0.288);
 }
 
-.nav-bar ul li {
-    margin-left: 20px;
-    display: inline;
-    padding: 10px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 700;
+.nav-content ul {
+    padding: 20px;
 }
 
-.nav-bar ul li:hover {
+.nav-content ul li {
+    margin-left: 20px;
+    padding: 10px;
+    cursor: pointer;
+    display: inline;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 400ms ease-in-out;
+}
+
+.nav-content ul .links:hover {
     color: var(--primary-color);
+    transition: all 200ms ease-in-out;
+    font-size: 0.9em;
+}
+
+.nav-content ul .logo-name a{
+    color: white;
+    cursor: default;
+    float: right;
+    margin-left: 0;
+    margin-right: 40px;
 }
 
 .main-container h1 {
     padding: 20px;
     text-align: center;
+}
+
+.main-container .text-centro.descricao {
+    text-align: center;
+    letter-spacing: var(--letter-spacing);
+}
+
+.conteudo-tabela {
+    text-align: center;
+    padding: 10px;
+}
+
+.conteudo-tabela .alerta-centro.erro {
+    background-color: rgba(250, 128, 114, 0.315);
+    width: 40em;
+    height: 4em;
+    margin: auto auto;
+    border: 1px solid rgba(250, 128, 114, 0.452);
+    border-radius: 3px;
+}
+
+.conteudo-tabela .alerta-centro.erro .error-message {
+    position: relative;
+    color: rgb(236, 53, 33);
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.tabela-hosts {
+    padding: 10px;
+}
+
+.tabela-hosts .tabela-centro.content {
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+}
+
+/* TODO BORDAS EM CADA TR DA TABELA */
+.tabela-hosts .tabela-centro.content .tabela-infos {
+    
+}
+
+.tabela-hosts .tabela-centro.content .tabela-infos td {
+    
 }
