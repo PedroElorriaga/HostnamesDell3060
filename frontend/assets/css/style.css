@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
 :root {
-  --primary-color: rgb(88, 56, 109);
-  --primary-color-dark: rgb(72, 0, 121);
-  --second-color: rgb(212, 212, 212);
-  --letter-spacing: 0.1em;
+    --primary-color: rgb(88, 56, 109);
+    --primary-color-dark: rgb(73, 0, 121);
+    --second-color: rgba(207, 205, 205, 0.336);
+    --letter-spacing: 0.1em;
 }
 
 * {
@@ -19,7 +20,7 @@ h1 {
 a {
     color: inherit;
     text-decoration: none;
-    
+
 }
 
 img {
@@ -27,7 +28,7 @@ img {
 }
 
 .nav-bar {
-    background-image: linear-gradient(to left, var(--primary-color) 3%, var(--second-color) 100%);
+    background-image: linear-gradient(to left, var(--primary-color) 5%, var(--second-color) 90%);
     border-bottom: 1px solid rgba(0, 0, 0, 0.288);
 }
 
@@ -48,10 +49,9 @@ img {
 .nav-content ul .links:hover {
     color: var(--primary-color);
     transition: all 200ms ease-in-out;
-    font-size: 0.9em;
 }
 
-.nav-content ul .logo-name a{
+.nav-content ul .logo-name a {
     color: white;
     cursor: default;
     float: right;
@@ -91,6 +91,23 @@ img {
     margin-top: 20px;
 }
 
+.conteudo-tabela .alerta-centro.warning {
+    background-color: rgba(250, 230, 54, 0.315);
+    width: 70%;
+    height: 4em;
+    margin: auto auto;
+    border: 1px solid rgba(250, 230, 54, 0.808);
+    border-radius: 3px;
+}
+
+.warning-message {
+    position: relative;
+    color: rgb(182, 169, 52);
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
 .tabela-hosts {
     padding: 10px;
 }
@@ -101,13 +118,80 @@ img {
     border-collapse: collapse;
 }
 
-/* TODO BORDAS EM CADA TR DA TABELA */
-.tabela-hosts .tabela-centro.content .tabela-infos {
-    
-}
+
+.tabela-hosts .tabela-centro.content .tabela-infos {}
 
 .tabela-hosts .tabela-centro.content .tabela-infos td {
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
     padding: 20px;
+}
+
+
+/* LOGON STYLE */
+
+
+.conteudo-login {
+    margin-top: 40px;
+}
+
+.formulario-centro.login {
+    background-color: rgba(88, 56, 109, 0.103);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    padding: 30px;
+    border-radius: 3px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+
+.formulario {
+    padding: 20px;
+}
+
+.formulario input {
+    background: white;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 6px, rgba(0, 0, 0, 0.10) 0px 3px 6px;
+}
+
+.formulario input:focus {
+    outline-style: solid;
+    outline-color: rgba(88, 56, 109, 0.514);
+    outline-width: 2px;
+}
+
+.formulario button {
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(88, 56, 109, 0.514);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    width: 90px;
+    transition: all 300ms ease-in-out;
+}
+
+.formulario button:hover {
+    background-color: rgba(88, 56, 109, 0.863);
+}
+
+.conteudo-cadastro {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50% , -55%);
+}
+
+.conteudo-cadastro h5 {
+    cursor: pointer;
+}
+
+.conteudo-cadastro h5:hover {
+    color: rgba(88, 56, 109, 0.863);
 }

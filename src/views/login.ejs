@@ -1,0 +1,35 @@
+<%- include('./includes/head.ejs')%>
+    <%- include('./includes/nav.ejs')%>
+
+
+        <section class="main-container">
+            <h1>
+                <%- titulo %>
+            </h1>
+            <p class="text-centro descricao">Entre em sua conta para habilitar a edição dos dados</p>
+
+            <div class="conteudo-tabela">
+                <div class="alerta-centro erro" hidden>
+                    <p class="error-message">Erro (getElement)</p>
+                </div>
+
+                <div class="conteudo-login">
+                    <div class="formulario-centro login">
+                        <h4>Entrar na conta</h4>
+                        <form action="/testMiddleware" method="POST" class="formulario">
+                            <input type="text" name="user" id="user" placeholder="Usuário">
+                            <br>
+                            <input type="password" name="userPassword" id="userPassword" placeholder="Senha">
+                            <br>
+
+                            <button>Entrar</button>
+                        </form>
+                    </div>
+                    <div class="conteudo-cadastro">
+                        <p class="descricao-cadastro">Ainda não possui uma conta ?</p>
+                        <h5><a href="/cadastro">Criar conta</a></h5>
+                    </div>
+                </div>
+                <div>
+        </section>
+        <%- include('./includes/footer.ejs')%>

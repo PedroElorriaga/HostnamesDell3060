@@ -2,10 +2,18 @@ const express = require('express')
 const route = express.Router()
 // IMPORTAÇÕES DOS CONTROLLERS
 const homeController = require('./src/controllers/homeController')
+const loginController = require('./src/controllers/loginController')
+const cadastroController = require('./src/controllers/cadastroController')
 
-// ROTAS
-route.get('/', homeController.paginaInicial)
-route.get('/teste', homeController.teste)
+// HOME
+route.get('/', homeController.index)
+
+// LOGIN
+route.get('/login', loginController.index)
+
+// CADASTRO
+route.get('/cadastro', cadastroController.index)
+
 route.post('/recebidos', homeController.recebidos)
 
 
