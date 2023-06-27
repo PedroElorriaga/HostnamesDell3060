@@ -29,11 +29,11 @@ img {
 
 .nav-bar {
     background-image: linear-gradient(to left, var(--primary-color) 5%, var(--second-color) 90%);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.288);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.096);
 }
 
 .nav-content ul {
-    padding: 20px;
+    padding: 14px;
 }
 
 .nav-content ul li {
@@ -41,14 +41,12 @@ img {
     padding: 10px;
     cursor: pointer;
     display: inline;
-    text-transform: uppercase;
-    font-weight: 700;
-    transition: all 400ms ease-in-out;
 }
 
 .nav-content ul .links:hover {
-    color: var(--primary-color);
     transition: all 200ms ease-in-out;
+    background-color: rgba(128, 128, 128, 0.119);
+    border-radius: 5px;
 }
 
 .nav-content ul .logo-name a {
@@ -56,7 +54,9 @@ img {
     cursor: default;
     float: right;
     margin-left: 0;
+    text-transform: uppercase;
     margin-right: 40px;
+    font-weight: 700;
 }
 
 .main-container h1 {
@@ -140,7 +140,7 @@ img {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -80%);
+    transform: translate(-50%, -60%);
     padding: 30px;
     border-radius: 3px;
     box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
@@ -151,7 +151,7 @@ img {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -65%);
+    transform: translate(-50%, -53%);
     padding: 30px;
     border-radius: 3px;
     box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
@@ -194,14 +194,14 @@ img {
 
 .conteudo-cadastro {
     position: absolute;
-    top: 60%;
+    top: 68%;
     left: 50%;
-    transform: translate(-50% , -55%);
+    transform: translate(-50%);
 }
 
 .conteudo-cadastro.cadastro-page {
     position: absolute;
-    top: 63%;
+    top: 71%;
     left: 50%;
     transform: translate(-50%);
 }
