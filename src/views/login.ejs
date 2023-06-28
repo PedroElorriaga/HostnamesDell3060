@@ -9,17 +9,16 @@
             <p class="text-centro descricao">Entre em sua conta para habilitar a edição dos dados</p>
 
             <div class="conteudo-tabela">
-                <div class="alerta-centro erro" hidden>
-                    <p class="error-message">Erro (getElement)</p>
-                </div>
+                <%- include('./includes/messages.ejs')%>
 
                 <div class="conteudo-login">
                     <div class="formulario-centro login">
                         <h4>Entrar na conta</h4>
-                        <form action="/testMiddleware" method="POST" class="formulario">
-                            <input type="text" name="user" id="user" placeholder="Usuário">
+                        <form action="/login/register" method="POST" class="formulario">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <input type="text" name="user" placeholder="Usuário ou email">
                             <br>
-                            <input type="password" name="userPassword" id="userPassword" placeholder="Senha">
+                            <input type="password" name="userPassword" placeholder="Senha">
                             <br>
 
                             <button>Entrar</button>

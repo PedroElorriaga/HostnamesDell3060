@@ -1,11 +1,14 @@
 exports.middlewareGlobal = (req, res, next) => {
+    res.locals.errors = req.flash('errors')
     next()
 }
 
 exports.checkCsrfError = (err, req, res, next) => {
-    if (err && 'EBADCSRFTOKEN' === err.code) {
+    if (err) {
        return res.render('../views/includes/404')
     }
+
+    next()
 }
 
 exports.csrfMiddleware = (req, res, next) => {

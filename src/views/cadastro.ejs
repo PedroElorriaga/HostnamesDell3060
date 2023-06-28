@@ -17,7 +17,8 @@
                     <div class="formulario-centro login-cadastro">
                         <h4>Cadastrar uma conta</h4>
                         <form action="/testMiddleware" method="POST" class="formulario">
-                            <input type="text" name="user" id="user" placeholder="Usuário">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <input type="text" name="user" id="user" placeholder="Email">
                             <br>
                             <input type="password" name="userPassword" id="userPassword" placeholder="Senha">
                             <br>
