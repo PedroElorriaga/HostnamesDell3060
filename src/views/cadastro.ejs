@@ -9,14 +9,12 @@
             <p class="text-centro descricao">A criação da conta será analisada antes da aprovação</p>
 
             <div class="conteudo-tabela">
-                <div class="alerta-centro erro" hidden>
-                    <p class="error-message">Erro (getElement)</p>
-                </div>
+                <%- include('./includes/messages.ejs')%>
 
                 <div class="conteudo-login">
                     <div class="formulario-centro login-cadastro">
                         <h4>Cadastrar uma conta</h4>
-                        <form action="/testMiddleware" method="POST" class="formulario">
+                        <form action="/cadastro/register" method="POST" class="formulario">
                             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                             <input type="text" name="user" id="user" placeholder="Email">
                             <br>

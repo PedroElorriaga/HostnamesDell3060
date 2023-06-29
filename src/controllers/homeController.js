@@ -5,7 +5,3 @@ exports.index = (req, res) => {
         titulo: 'Hostnames DELL 3060'
     })
 }
-
-exports.recebidos = (req, res) => {
-    res.send(req.body.message + req.body._csrf)
-}

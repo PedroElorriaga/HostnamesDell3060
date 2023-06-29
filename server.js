@@ -29,9 +29,9 @@ mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true, useUnifi
 
 
 app.use(helmet())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true })) // UTILIZAÇÃO DO REQ.BODY
 app.use(express.json())
-app.use(express.static(path.resolve(__dirname, 'public')))
+app.use(express.static(path.resolve(__dirname, 'public'))) //TODO FAZER O TESTE DO /PUBLIC
 
 
 // SESSÃO

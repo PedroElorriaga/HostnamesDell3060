@@ -1,6 +1,7 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose') // REFERENCIA
 const validator = require('validator')
 
+// DEFINIÇÃO DE SCHEMA
 const LoginSchema = new mongoose.Schema({
     email: { type: String, required: true },
     senha: { type: String, required: true },
@@ -35,6 +36,11 @@ class Login {
 
         if (this.body.senha.length < 8 || this.body.senha.length > 22) {
             this.errors.push('A senha deve ter entre 8 a 22 caracteres')
+            return
+        }
+
+        if (this.body.senha !== this.body.senhaRepeat) {
+            this.errors.push('As senhas não são conferem')
         }
 
         return
@@ -50,6 +56,7 @@ class Login {
         this.body = {
             email: this.body.user,
             senha: this.body.userPassword,
+            senhaRepeat: this.body.userPasswordRepeat,
         }
     }
 }

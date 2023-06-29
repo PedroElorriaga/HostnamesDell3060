@@ -1,9 +1,19 @@
-<% if (errors.length > 0) { %>
+<% if (errors.length> 0) { %>
     <div class="alerta-centro erro">
         <p class="error-message">
-            <% errors.forEach(erro => { %>
+            <% errors.forEach(erro=> { %>
                 <%= erro %><br>
-                <% }) %>
+                    <% }) %>
         </p>
     </div>
     <% } %>
+
+        <% if (sucesso.length> 0) { %>
+            <div class="alerta-centro sucesso">
+                <p class="sucesso-message">
+                    <% sucesso.forEach(sucesso => { %>
+                    <%= sucesso %><br>
+                    <% }) %>
+                </p>
+            </div>
+            <% } %>
