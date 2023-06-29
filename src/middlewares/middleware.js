@@ -1,4 +1,4 @@
-exports.middlewareGlobal = (req, res, next) => {
+exports.flashMessagesMiddleware = (req, res, next) => {
     res.locals.errors = req.flash('errors')
     res.locals.sucesso = req.flash('sucesso')
     next()

@@ -10,7 +10,7 @@ const app = express()
 const mongoose = require('mongoose')
 const routes = require('./routes') // ROTAS DA APLICAÇÃO EX: /HOME /RECEBIDOS
 const path = require('path')
-const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware')
+const { flashMessagesMiddleware, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware')
 const MongoStore = require('connect-mongo') // SESSÕES SÃO SALVAS NA BASE DE DADOS
 const helmet = require('helmet')
 const csrf = require('csurf') // TOKENS PARA FORMULÁRIOS 
@@ -59,7 +59,7 @@ app.set('view engine', 'ejs')
 app.use(csrf())
 
 // MIDDLEWARES
-app.use(middlewareGlobal)
+app.use(flashMessagesMiddleware)
 app.use(csrfMiddleware)
 app.use(checkCsrfError)
 app.use(routes) // UTILIZANDO ROUTES COMO PARAMETRO
