@@ -1,5 +1,6 @@
 const mongoose = require('mongoose') // REFERENCIA
 const validator = require('validator')
+const bcrypt = require('bcryptjs')
 
 // DEFINIÇÃO DE SCHEMA
 const LoginSchema = new mongoose.Schema({
@@ -18,9 +19,16 @@ class Login {
 
     async register() {
         this.valida()
+
+        if (this.errors.length > 0) return
+
+        await this.usuarioExistente()
+
         if (this.errors.length > 0) return
 
         try {
+            const salt = bcrypt.genSaltSync()
+            this.body.senha = bcrypt.hashSync(this.body.senha, salt)
             this.user = await LoginModel.create(this.body)
         } catch (err) {
             console.log(err)
@@ -57,6 +65,14 @@ class Login {
             email: this.body.user,
             senha: this.body.userPassword,
             senhaRepeat: this.body.userPasswordRepeat,
+        }
+    }
+
+    async usuarioExistente() {
+        const userCheck = await LoginModel.findOne({ email: this.body.email })
+
+        if (userCheck) {
+            this.errors.push('Usuário já existe')
         }
     }
 }

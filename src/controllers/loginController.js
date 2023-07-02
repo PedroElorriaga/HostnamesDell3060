@@ -5,3 +5,7 @@ exports.index = (req, res) => {
         titulo: 'Login',
     })
 }
+
+exports.register = (req, res) => {
+    res.send(req.body)
+}

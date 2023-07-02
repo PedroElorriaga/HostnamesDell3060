@@ -19,22 +19,6 @@ const flash = require('connect-flash') // MENSAGENS PROVISÓRIAS
 const app = express()
 
 
-// ANALISAR ARQUIVOS JSON
-app.use(express.urlencoded({ extended: true })) // UTILIZAÇÃO DO REQ.BODY
-app.use(express.json())
-
-
-// RECURSOS DE SEGURANÇA
-app.use(helmet())
-app.use(csrf())
-
-
-// VIEW ENGINE - EJS
-app.set('views', path.resolve(__dirname, 'src', 'views'))
-app.set('view engine', 'ejs')
-app.use(express.static(path.resolve(__dirname, 'public'))) 
-
-
 // CONEXÃO MONGODB
 mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -43,10 +27,15 @@ mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true, useUnifi
     })
     .catch(e => console.log('ERRO: ' + e))
 
+    
+// ANALISAR ARQUIVOS JSON
+app.use(express.urlencoded({ extended: true })) // UTILIZAÇÃO DO REQ.BODY
+app.use(express.json())
+
 
 // COOKIES E SESSÃO
 const sessionOptions = session({
-    secret: 'Qaulquer informação',
+    secret: 'dlcodjjiencifssda',
     store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
     resave: false,
     saveUninitialized: false,
@@ -57,6 +46,17 @@ const sessionOptions = session({
 })
 app.use(sessionOptions)
 app.use(flash())
+
+
+// RECURSOS DE SEGURANÇA
+app.use(helmet())
+app.use(csrf())
+
+
+// VIEW ENGINE - EJS
+app.use(express.static(path.resolve(__dirname, 'public'))) 
+app.set('views', path.resolve(__dirname, 'src', 'views'))
+app.set('view engine', 'ejs')
 
 
 // MIDDLEWARES

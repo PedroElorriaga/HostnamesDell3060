@@ -241,3 +241,21 @@ img {
 .host-info {
     display: none;
 }
+
+
+/* 404 ERROR */
+
+
+.page-404 {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.page-404 p {
+    padding: 10px;
+    letter-spacing: var(--letter-spacing);
+}
+
+.page-404 h5:hover {
+    color: var(--primary-color);
+}

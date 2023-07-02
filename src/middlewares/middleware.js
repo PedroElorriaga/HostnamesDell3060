@@ -6,7 +6,8 @@ exports.flashMessagesMiddleware = (req, res, next) => {
 
 exports.checkCsrfError = (err, req, res, next) => {
     if (err) {
-       return res.render('../views/includes/404')
+        console.log(err)
+        return res.render('../views/includes/404')
     }
 
     next()
