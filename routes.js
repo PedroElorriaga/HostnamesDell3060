@@ -10,7 +10,7 @@ route.get('/', homeController.index)
 
 // LOGIN
 route.get('/login', loginController.index)
-route.post('/login/register', loginController.register)
+route.post('/login/success', loginController.login)
 
 
 // CADASTRO

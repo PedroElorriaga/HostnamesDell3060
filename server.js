@@ -34,7 +34,7 @@ app.use(express.json())
 
 
 // COOKIES E SESSÃO
-const sessionOptions = session({
+app.use(session({
     secret: 'dlcodjjiencifssda',
     store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
     resave: false,
@@ -43,8 +43,8 @@ const sessionOptions = session({
         maxAge: 60000 * 60, // 1 hora
         httpOnly: true
     }
-})
-app.use(sessionOptions)
+}))
+
 app.use(flash())
 
 

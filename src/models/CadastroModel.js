@@ -17,6 +17,8 @@ class Login {
         this.user = null
     }
 
+    // REGISTRO
+
     async register() {
         this.valida()
 
@@ -26,13 +28,9 @@ class Login {
 
         if (this.errors.length > 0) return
 
-        try {
-            const salt = bcrypt.genSaltSync()
-            this.body.senha = bcrypt.hashSync(this.body.senha, salt)
-            this.user = await LoginModel.create(this.body)
-        } catch (err) {
-            console.log(err)
-        }
+        const salt = bcrypt.genSaltSync()
+        this.body.senha = bcrypt.hashSync(this.body.senha, salt)
+        this.user = await LoginModel.create(this.body)
     }
 
     valida() {
@@ -73,6 +71,27 @@ class Login {
 
         if (userCheck) {
             this.errors.push('Usuário já existe')
+        }
+    }
+
+    // LOGIN
+
+    async loginUsuario() {
+        this.body = {
+            email: this.body.user,
+            senha: this.body.userPassword
+        }
+
+        this.user = await LoginModel.findOne({ email: this.body.email })
+
+        if (!this.user) {
+            this.errors.push('Usuário ou senha inválidos')
+            return
+        }
+
+        if (!bcrypt.compareSync(this.body.senha, this.user.senha)) {
+            this.errors.push('Usuário ou senha inválidos')
+            return
         }
     }
 }

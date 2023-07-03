@@ -1,4 +1,4 @@
-const Login = require('../models/LoginModel')
+const Login = require('../models/CadastroModel')
 
 exports.index = (req, res) => {
     res.render('cadastro', {
