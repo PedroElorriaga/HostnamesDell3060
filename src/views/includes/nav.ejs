@@ -4,12 +4,18 @@
             <li class="links">
                 <a href="/">Home</a>
             </li>
-            <li class="links">
-                <a href="/login">Login</a>
-            </li>
-            <li class="logo-name">
-                <a>Accenture</a> 
-            </li>
+            <% if(!user) { %>
+                <li class="links">
+                    <a href="/login">Login</a>
+                </li>
+                <% } else { %>
+                    <li class="links">
+                        <a href="/logout">Sair</a>
+                    </li>
+                    <% } %>
+                        <li class="logo-name">
+                            <a>Accenture</a>
+                        </li>
         </ul>
     </div>
 </nav>

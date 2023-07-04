@@ -91,8 +91,11 @@ class Login {
 
         if (!bcrypt.compareSync(this.body.senha, this.user.senha)) {
             this.errors.push('Usuário ou senha inválidos')
+            this.user = null
             return
         }
+
+        
     }
 }
 

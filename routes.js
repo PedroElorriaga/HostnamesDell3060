@@ -11,6 +11,7 @@ route.get('/', homeController.index)
 // LOGIN
 route.get('/login', loginController.index)
 route.post('/login/success', loginController.login)
+route.get('/logout', loginController.logout)
 
 
 // CADASTRO
