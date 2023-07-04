@@ -13,15 +13,11 @@ exports.register = async (req, res) => {
 
         if (loginInstance.errors.length > 0) {
             req.flash('errors', loginInstance.errors)
-            req.session.save(function () {
-                return res.redirect('/cadastro')
-            })
-            return
+            return res.redirect('/cadastro')
         }
         req.flash('sucesso', 'Login criado com sucesso')
-        req.session.save(function () {
-            return res.redirect('/cadastro')
-        })
+        return res.redirect('/cadastro')
+
     } catch (err) {
         console.log(err)
         res.render('../views/includes/404.ejs')
