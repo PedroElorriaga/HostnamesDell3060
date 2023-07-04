@@ -1,6 +1,10 @@
 exports.flashMessagesMiddleware = (req, res, next) => {
     res.locals.errors = req.flash('errors')
     res.locals.sucesso = req.flash('sucesso')
+    next()
+}
+
+exports.usuarioLogado = (req, res, next) => {
     res.locals.user = req.session.user
     next()
 }
@@ -10,7 +14,6 @@ exports.checkCsrfError = (err, req, res, next) => {
         console.log(err)
         return res.render('../views/includes/404')
     }
-
     next()
 }
 

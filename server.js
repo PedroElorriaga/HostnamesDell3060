@@ -7,7 +7,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes') // ROTAS DA APLICAÇÃO EX: /HOME /RECEBIDOS
 const path = require('path')
-const { flashMessagesMiddleware, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware')
+const { flashMessagesMiddleware, usuarioLogado, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware')
 const MongoStore = require('connect-mongo') // SESSÕES SÃO SALVAS NA BASE DE DADOS
 const helmet = require('helmet')
 const csrf = require('csurf') // TOKENS PARA FORMULÁRIOS 
@@ -60,8 +60,9 @@ app.set('view engine', 'ejs')
 
 // MIDDLEWARES
 app.use(flashMessagesMiddleware)
-app.use(csrfMiddleware)
+app.use(usuarioLogado)
 app.use(checkCsrfError)
+app.use(csrfMiddleware)
 
 
 // ROTAS
