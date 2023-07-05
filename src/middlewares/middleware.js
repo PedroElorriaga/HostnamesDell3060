@@ -21,3 +21,11 @@ exports.csrfMiddleware = (req, res, next) => {
     res.locals.csrfToken = req.csrfToken()
     next()
 }
+
+exports.usuarioEditor = (req, res, next) => {
+    if (!req.session.user) {
+        req.flash.errors = req.flash('errors', 'Você precisa fazer login primeiro')
+        return res.redirect('/')
+    }
+    next()
+}

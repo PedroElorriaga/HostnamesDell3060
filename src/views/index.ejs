@@ -9,48 +9,49 @@
 
       <% if(!user) { %>
 
-        <p class="text-centro descricao">Para habilitar a edição, faça o logon em seu perfil</p>
+        <p class="text-centro descricao">Dados de cadastro dos equipamentos<br>
+        OBS: Para conseguir visualizar e editar o mac address faça o login em seu perfil</p>
 
         <div class="conteudo-tabela">
-          <div class="alerta-centro warning">
-            <p class="warning-message">Apenas visualização</p>
-          </div>
-          <% } else { %>
-            <div hidden class="logado"></div>
-            <p class="text-centro descricao">Olá <b>
-                <%= user.email %>
-              </b>, a edição agora está habilitada</p>
 
-            <% } %>
+          <%- include('./includes/messages.ejs')%>
 
-              <div class="tabela-hosts">
-                <table class="tabela-centro content">
-                  <tr class="tabela-infos">
-                    <td>ACC620000</td>
-                    <td class="host-info">D0:00:00:AA:BB:CC</td>
-                    <td>0000VW2</td>
-                    <td class="status">REMOVIDO</td>
-                  </tr>
-                  <tr class="tabela-infos">
-                    <td>ACC620000</td>
-                    <td class="host-info">D0:00:00:AA:BB:CC</td>
-                    <td>0000VW2</td>
-                    <td class="status">REMOVER</td>
-                  </tr>
-                  <tr class="tabela-infos">
-                    <td>ACC620000</td>
-                    <td class="host-info">D0:00:00:AA:BB:CC</td>
-                    <td>0000VW2</td>
-                    <td class="status">REMOVIDO</td>
-                  </tr>
-                  <tr class="tabela-infos">
-                    <td>ACC620000</td>
-                    <td class="host-info">D0:00:00:AA:BB:CC</td>
-                    <td>0000VW2</td>
-                    <td class="status">REMOVER</td>
-                  </tr>
-                </table>
-              </div>
+            <% } else { %>
+              <div hidden class="logado"></div>
+              <p class="text-centro descricao">Olá <b>
+                  <%= user.email %>
+                </b>, a edição agora está habilitada</p>
+
+              <% } %>
+
+                <div class="tabela-hosts">
+                  <table class="tabela-centro content">
+                    <tr class="tabela-infos">
+                      <td>ACC620000</td>
+                      <td class="host-info">D0:00:00:AA:BB:CC</td>
+                      <td>0000VW2</td>
+                      <td class="status">REMOVIDO</td>
+                    </tr>
+                    <tr class="tabela-infos">
+                      <td>ACC620000</td>
+                      <td class="host-info">D0:00:00:AA:BB:CC</td>
+                      <td>0000VW2</td>
+                      <td class="status">REMOVER</td>
+                    </tr>
+                    <tr class="tabela-infos">
+                      <td>ACC620000</td>
+                      <td class="host-info">D0:00:00:AA:BB:CC</td>
+                      <td>0000VW2</td>
+                      <td class="status">REMOVIDO</td>
+                    </tr>
+                    <tr class="tabela-infos">
+                      <td>ACC620000</td>
+                      <td class="host-info">D0:00:00:AA:BB:CC</td>
+                      <td>0000VW2</td>
+                      <td class="status">REMOVER</td>
+                    </tr>
+                  </table>
+                </div>
         </div>
     </section>
     <%- include('./includes/footer.ejs')%>

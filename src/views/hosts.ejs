@@ -1,0 +1,29 @@
+<%- include('./includes/head.ejs')%>
+  <%- include('./includes/nav.ejs')%>
+
+
+    <section class="main-container">
+      <h1>
+        <%- titulo %>
+      </h1>
+      <section class="main-container">
+        <div hidden class="logado"></div>
+        <p class="text-centro descricao">Crie ou edite os dados dos hotsnames abaixo</p>
+
+        <div class="conteudo-tabela">
+          <div class="conteudo-edicao">
+            <div class="formulario-centro edicao">
+              <h4>Insira os dados corretamente</h4>
+              <form action="/hostnames/register" method="POST" class="formulario">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="text" name="numero-serie" placeholder="Número de série"><br>
+                <input type="text" name="hostname" placeholder="Hostname"><br>
+                <input type="text" name="mac" placeholder="Mac Address"><br>
+                <input type="text" name="status" placeholder="Status"><br>
+                <button type="submit">Salvar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <%- include('./includes/footer.ejs')%>
