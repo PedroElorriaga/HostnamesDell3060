@@ -11,12 +11,15 @@
         <p class="text-centro descricao">Crie ou edite os dados dos hotsnames abaixo</p>
 
         <div class="conteudo-tabela">
+
+          <%- include('./includes/messages') %>
+          
           <div class="conteudo-edicao">
             <div class="formulario-centro edicao">
-              <h4>Insira os dados corretamente</h4>
+              <h4>Insira os dados do equipamento</h4>
               <form action="/hostnames/register" method="POST" class="formulario">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <input type="text" name="numero-serie" placeholder="Número de série"><br>
+                <input type="text" name="numeroSerie" placeholder="Número de série"><br>
                 <input type="text" name="hostname" placeholder="Hostname"><br>
                 <input type="text" name="mac" placeholder="Mac Address"><br>
                 <input type="text" name="status" placeholder="Status"><br>

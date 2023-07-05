@@ -25,7 +25,7 @@ exports.csrfMiddleware = (req, res, next) => {
 exports.usuarioEditor = (req, res, next) => {
     if (!req.session.user) {
         req.flash.errors = req.flash('errors', 'Você precisa fazer login primeiro')
-        return res.redirect('/')
+        return res.redirect('/login')
     }
     next()
 }
