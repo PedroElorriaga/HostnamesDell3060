@@ -99,6 +99,7 @@ img {
     margin: auto auto;
     border: 1px solid rgba(250, 230, 54, 0.808);
     border-radius: 3px;
+    margin-bottom: 20px;
 }
 
 .warning-message {
@@ -236,13 +237,18 @@ img {
 }
 
 
-/* HIDDEN ITENS */
+/* EDIÇÃO */
 
-
-/* .host-info {
-    display: none;
-} */
-
+.conteudo-edicao {
+    background-color: rgba(88, 56, 109, 0.103);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -53%);
+    padding: 30px;
+    border-radius: 3px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
 
 /* 404 ERROR */
 
