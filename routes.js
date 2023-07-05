@@ -4,6 +4,10 @@ const route = express.Router()
 const homeController = require('./src/controllers/homeController')
 const loginController = require('./src/controllers/loginController')
 const cadastroController = require('./src/controllers/cadastroController')
+const hostsController = require('./src/controllers/hostsController')
+
+// MIDDLEWARE LOCAL
+const { usuarioEditor } = require('./src/middlewares/middleware')
 
 // HOME
 route.get('/', homeController.index)
@@ -19,6 +23,9 @@ route.get('/cadastro', cadastroController.index)
 route.post('/cadastro/register', cadastroController.register)
 
 
+// HOSTS
+route.get('/hostnames', usuarioEditor, hostsController.index)
+route.post('/hostnames/register', hostsController.register)
 
 //EXPORTANDO MODULO
 module.exports = route 
