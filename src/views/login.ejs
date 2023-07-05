@@ -11,24 +11,24 @@
             <div class="conteudo-tabela">
                 <%- include('./includes/messages.ejs')%>
 
-                <div class="conteudo-login">
-                    <div class="formulario-centro login">
-                        <h4>Entrar na conta</h4>
-                        <form action="/login/success" method="POST" class="formulario">
-                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                            <input type="text" name="user" placeholder="Usuário ou email">
-                            <br>
-                            <input type="password" name="userPassword" placeholder="Senha">
-                            <br>
+                    <div class="conteudo-login">
+                        <div class="formulario-centro login">
+                            <h4>Entrar na conta</h4>
+                            <form action="/login/success" method="POST" class="formulario">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <input type="text" name="user" placeholder="Usuário ou email">
+                                <br>
+                                <input type="password" name="userPassword" placeholder="Senha">
+                                <br>
 
-                            <button type="submit">Entrar</button>
-                        </form>
+                                <button type="submit">Entrar</button>
+                            </form>
+                        </div>
+                        <div class="conteudo-cadastro">
+                            <p class="descricao-cadastro">Ainda não possui uma conta ?</p>
+                            <h5><a href="/cadastro">Criar conta</a></h5>
+                        </div>
                     </div>
-                    <div class="conteudo-cadastro">
-                        <p class="descricao-cadastro">Ainda não possui uma conta ?</p>
-                        <h5><a href="/cadastro">Criar conta</a></h5>
-                    </div>
-                </div>
-                <div>
+                    <div>
         </section>
         <%- include('./includes/footer.ejs')%>
