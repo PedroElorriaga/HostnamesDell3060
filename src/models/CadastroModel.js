@@ -34,7 +34,7 @@ class Login {
     }
 
     valida() {
-        this.cleanUp()
+        this.dadosLimpos()
 
         if (!validator.isEmail(this.body.email)) {
             this.errors.push('E-mail inválido')
@@ -52,7 +52,7 @@ class Login {
         return
     }
 
-    cleanUp() {
+    dadosLimpos() {
         for (const key in this.body) {
             if (typeof this.body[key] !== 'string') {
                 this.body[key] = ''
