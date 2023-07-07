@@ -26,6 +26,10 @@ img {
     z-index: 99999;
 }
 
+
+/* NAV */
+
+
 .nav-bar {
     background-image: linear-gradient(to left, var(--primary-color) 5%, var(--second-color) 90%);
     border-bottom: 1px solid rgba(0, 0, 0, 0.096);
@@ -33,6 +37,7 @@ img {
 
 .nav-content ul {
     padding: 14px;
+    position: relative;
 }
 
 .nav-content ul li {
@@ -49,18 +54,40 @@ img {
 .nav-content ul .links:hover {
     transition: all 200ms ease-in-out;
     background-color: rgba(128, 128, 128, 0.119);
-    border-radius: 20px;
+    border-radius: 15px;
+}
+
+.nav-content ul .logo-name {
+    right: 0;
+    top: 4px;
+    position: absolute;
+    cursor: default;
 }
 
 .nav-content ul .logo-name a {
     color: white;
     cursor: default;
-    float: right;
     margin-left: 0;
     text-transform: uppercase;
     margin-right: 40px;
     font-weight: 700;
 }
+
+.nav-content ul .logout {
+    right: 180px;
+    top: 4px;
+    position: absolute;
+    cursor: default;
+}
+
+.nav-content ul .logout a {
+    color: white;
+    text-transform: uppercase;
+}
+
+
+/* CONTEUDO */
+
 
 .main-container h1 {
     padding: 20px;
@@ -261,6 +288,29 @@ img {
     border-radius: 3px;
     box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
 }
+
+.conteudo-edicao .formulario-centro.edicao label {
+    display: block;
+    text-align: center;
+    margin-bottom: -20px;
+    margin-top: 25px;
+    float: left;
+}
+
+.conteudo-edicao .formulario-centro.edicao input[type="text"] {
+    margin-top: -25px;
+    margin-left: 120px;
+}
+
+.conteudo-edicao .formulario-centro.edicao input[type="radio"] {
+    box-shadow: none;
+    margin-top: 8px;
+}
+
+.conteudo-edicao .formulario-centro.edicao input[type="radio"]:focus {
+    outline-color: transparent;
+}
+
 
 
 /* 404 ERROR */
