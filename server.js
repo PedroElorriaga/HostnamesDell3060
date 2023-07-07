@@ -17,6 +17,7 @@ const flash = require('connect-flash') // MENSAGENS PROVISÓRIAS
 
 // INICIANDO EXPRESS APP
 const app = express()
+const PORT = 3000
 
 
 // CONEXÃO MONGODB
@@ -71,8 +72,8 @@ app.use(routes)
 
 // INICIALIZAÇÃO DA APLICAÇÃO
 app.on('connection', () => {
-    app.listen(3000, () => {
-        console.log('Servidor sendo executado na porta: 3000')
-        console.log('Acessar http://localhost:3000')
+    app.listen(PORT, () => {
+        console.log('Servidor sendo executado na porta: ' + PORT)
+        console.log(`Acessar http://localhost:${PORT}`)
     })
 })

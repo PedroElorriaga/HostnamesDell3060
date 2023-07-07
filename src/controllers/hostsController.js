@@ -2,7 +2,7 @@ const Hosts = require('../models/HostsModel')
 
 exports.index = (req, res) => {
     res.render('hosts', {
-        titulo: 'Hosts'
+        titulo: 'Hostnames'
     })
 }
 
@@ -16,9 +16,22 @@ exports.register = async (req, res) => {
             return res.redirect('/hostnames')
         }
         req.flash('sucesso', 'O equipamento foi cadastrado com sucesso!')
-        return res.redirect('/hostnames')
+        return res.redirect(`/hostnames/index/${hostInstance.hosts._id}`)
     }catch(err) {
         res.render('../views/includes/404.ejs')
         console.log('ERRO: ' + err)
     }
+}
+
+exports.edicao = async (req, res) => {
+    if(!req.params.id){
+        return res.render('../views/includes/404.ejs')
+    }
+
+    const dados = await Hosts.procurarPeloId(req.params.id)
+
+    if(!dados) {
+        return res.render('../views/includes/404.ejs')
+    }
+    res.render('../views/hosts.ejs')
 }

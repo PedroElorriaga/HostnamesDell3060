@@ -7,7 +7,7 @@ const cadastroController = require('./src/controllers/cadastroController')
 const hostsController = require('./src/controllers/hostsController')
 
 // MIDDLEWARE LOCAL
-const { usuarioEditor } = require('./src/middlewares/middleware')
+const { usuarioEditor, usuarioLogado } = require('./src/middlewares/middleware')
 
 // HOME
 route.get('/', homeController.index)
@@ -25,7 +25,8 @@ route.post('/cadastro/register', cadastroController.register)
 
 // HOSTS
 route.get('/hostnames', usuarioEditor, hostsController.index)
-route.post('/hostnames/register', hostsController.register)
+route.post('/hostnames/register', usuarioEditor, hostsController.register)
+route.get('/hostnames/index/:id', usuarioEditor, hostsController.edicao)
 
 //EXPORTANDO MODULO
 module.exports = route 
