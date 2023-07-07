@@ -8,7 +8,7 @@
       </h1>
       <section class="main-container">
         <div hidden class="logado"></div>
-        <p class="text-centro descricao">Crie ou edite os dados dos hotsnames abaixo</p>
+        <p class="text-centro descricao">Formulário de cadastro de equipamento DELL 3060</p>
 
         <div class="conteudo-tabela">
 
@@ -19,10 +19,15 @@
               <h4>Insira os dados do equipamento</h4>
               <form action="/hostnames/register" method="POST" class="formulario">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <input type="text" name="numeroSerie" placeholder="Número de série"><br>
-                <input type="text" name="hostname" placeholder="Hostname"><br>
-                <input type="text" name="mac" placeholder="Mac Address"><br>
-                <input type="text" name="status" placeholder="Status"><br>
+                <label>Serial Number</label><br>
+                <input type="text" class="sn" name="numeroSerie" placeholder="Número de série"><br>
+                <label>Hostname</label><br>
+                <input type="text" name="hostname" placeholder="ACC..."><br>
+                <label>Mac Address</label><br>
+                <input type="text" class="mac" name="mac" placeholder="Ex: D0:00..."><br>
+                <label>Status</label><br>
+                <input type="radio" name="status" id="remover" value="REMOVIDO"> REMOVIDO
+                <input type="radio" name="status" id="removido" value="REMOVER" checked> REMOVER<br>
                 <button type="submit">Salvar</button>
               </form>
             </div>
