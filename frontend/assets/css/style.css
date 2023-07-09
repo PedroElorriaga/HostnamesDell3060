@@ -279,7 +279,7 @@ img {
 /* MEDIA FORMULÁRIOS */
 
 /* TODO MEDIA QUERY */
-@media screen and (max-height: 900px) {
+@media (max-height: 817px) {
 
     .main-container {
         font-size: 14px;
@@ -290,14 +290,72 @@ img {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -60%);
+        transform: translate(-50%, -50%);
         padding: 30px;
         border-radius: 3px;
         box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
     }
 
+    .conteudo-cadastro {
+        position: absolute;
+        top: 71%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
 }
 
+@media (max-height: 719px) {
+
+    .main-container {
+        font-size: 14px;
+    }
+
+    .formulario-centro.login {
+        background-color: rgba(88, 56, 109, 0.103);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        padding: 30px;
+        border-radius: 3px;
+        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+    }
+
+    .conteudo-cadastro {
+        position: absolute;
+        top: 82%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+}
+
+@media (max-height: 553px) {
+
+    .main-container {
+        font-size: 14px;
+    }
+
+    .formulario-centro.login {
+        background-color: rgba(88, 56, 109, 0.103);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -15%);
+        padding: 30px;
+        border-radius: 3px;
+        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+    }
+
+    .conteudo-cadastro {
+        position: absolute;
+        top: 91%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+}
 
 /* EDIÇÃO */
 
