@@ -17,25 +17,29 @@
             <div class="conteudo-edicao">
               <div class="formulario-centro edicao">
                 <h4>Insira os dados do equipamento</h4>
-                <form action="/hostnames/register" method="POST" class="formulario">
-                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                  <label>Serial Number</label><br>
-                  <input value="<%= hosts.numeroSerie %>" type="text" name="numeroSerie"
-                    placeholder="Número de série"><br>
-                  <label>Hostname</label><br>
-                  <input value="<%= hosts.hostName %>" type="text" name="hostname" placeholder="ACC..."><br>
-                  <label>Mac Address</label><br>
-                  <input value="<%= hosts.mac %>" type="text" name="mac" placeholder="Ex: D0:00..."><br>
-                  <label>Status</label><br>
-                  <% if(!hosts.status) { %>
-                    <input type="radio" name="status" id="remover" value="REMOVIDO">
-                    REMOVIDO
-                    <input type="radio" name="status" id="removido" value="REMOVER" checked> REMOVER<br>
+                <% if(hosts._id) { %>
+                  <form action="/hostnames/edit/<%= hosts._id %>" method="POST" class="formulario">
                     <% } else { %>
-                      <input value="<%= hosts.status %>" type="text" name="status" disabled><br>
-                      <% } %>
-                      <button type="submit">Salvar</button>
-                </form>
+                      <form action="/hostnames/register" method="POST" class="formulario">
+                        <% } %>
+                          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                          <label>Serial Number</label><br>
+                          <input value="<%= hosts.numeroSerie %>" type="text" name="numeroSerie"
+                            placeholder="Número de série"><br>
+                          <label>Hostname</label><br>
+                          <input value="<%= hosts.hostName %>" type="text" name="hostname" placeholder="ACC..."><br>
+                          <label>Mac Address</label><br>
+                          <input value="<%= hosts.mac %>" type="text" name="mac" placeholder="Ex: D0:00..."><br>
+                          <label>Status</label><br>
+                          <% if(!hosts.status) { %>
+                            <input type="radio" name="status" id="remover" value="REMOVIDO">
+                            REMOVIDO
+                            <input type="radio" name="status" id="removido" value="REMOVER" checked> REMOVER<br>
+                            <% } else { %>
+                              <input value="<%= hosts.status %>" type="text" name="status" disabled><br>
+                              <% } %>
+                                <button type="submit">Salvar</button>
+                      </form>
               </div>
             </div>
         </div>

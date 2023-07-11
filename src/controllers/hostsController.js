@@ -25,7 +25,7 @@ exports.register = async (req, res) => {
     }
 }
 
-exports.edicao = async (req, res) => {
+exports.cadastro = async (req, res) => {
     if(!req.params.id){
         return res.render('../views/includes/404.ejs')
     }
@@ -39,4 +39,10 @@ exports.edicao = async (req, res) => {
         titulo: 'Edição de hosts',
         hosts: dados
     })
+}
+
+exports.edicao = async(req, res) => {
+    if(!req.params.id){
+        return res.render('../views/includes/404.ejs')
+    }
 }
