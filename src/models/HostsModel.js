@@ -24,14 +24,14 @@ class Hosts {
     }
 
     async register() {
-        this.valida()
+        await this.valida()
 
         if(this.errors.length > 0) return
 
         this.hosts = await HostsModel.create(this.body)
     }
 
-    valida() {
+    async valida() {
         this.dadosLimpos()
 
         if(this.body.numeroSerie == ''){
@@ -40,6 +40,13 @@ class Hosts {
 
         if(this.body.mac == ''){
             this.errors.push('O Mac Address não pode estar vázio')
+            return
+        }
+
+        const macDuplicado = await HostsModel.findOne({ mac: this.body.mac })
+
+        if(this.body.mac == macDuplicado.mac) {
+            this.errors.push('O Mac Address já está cadastrado')
             return
         }
 

@@ -1,8 +1,10 @@
 const Hosts = require('../models/HostsModel')
+const path = require('path')
 
 exports.index = (req, res) => {
     res.render('hosts', {
-        titulo: 'Hostnames'
+        titulo: 'Hostnames',
+        hosts: {}
     })
 }
 
@@ -33,5 +35,8 @@ exports.edicao = async (req, res) => {
     if(!dados) {
         return res.render('../views/includes/404.ejs')
     }
-    res.render('../views/hosts.ejs')
+    res.render('../views/hosts.ejs', {
+        titulo: 'Edição de hosts',
+        hosts: dados
+    })
 }
