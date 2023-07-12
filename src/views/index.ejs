@@ -10,7 +10,7 @@
       <% if(!user) { %>
 
         <p class="text-centro descricao">Dados de cadastro dos equipamentos<br>
-        OBS: Para conseguir visualizar e editar o mac address faça o login em seu perfil</p>
+          OBS: Para conseguir visualizar e editar o mac address faça o login em seu perfil</p>
 
         <div class="conteudo-tabela">
 
@@ -26,13 +26,18 @@
 
                 <div class="tabela-hosts">
                   <table class="tabela-centro content">
-                    <tr class="tabela-infos">
-                      <td>ACC620000</td>
-                      <td class="host-info">D0:00:00:AA:BB:CC</td>
-                      <td>0000VW2</td>
-                      <td class="status">REMOVIDO</td>
-                    </tr>
-                    
+                    <% equipamentos.forEach(equipamento=> { %>
+                      <tr class="tabela-infos">
+                        <td><%= equipamento.numeroSerie %></td>
+                        <td class="host-info"><%= equipamento.mac %></td>
+                        <td><%= equipamento.hostName %></td>
+                        <td class="status"><%= equipamento.status %></td>
+                        <% if(user) { %>
+                        <td><a href="/hostnames/edit/<%= equipamento._id %>">Editar</a></td>
+                        <td><a href="/hostnames/remove/<%= equipamento._id %>">Excluir</a></td>
+                        <% } %>
+                      </tr>
+                      <% }) %>
                   </table>
                 </div>
         </div>

@@ -13,36 +13,42 @@ exports.register = async (req, res) => {
         const hostInstance = new Hosts(req.body)
         await hostInstance.register()
 
-        if(hostInstance.errors.length > 0){
+        if (hostInstance.errors.length > 0) {
             req.flash('errors', hostInstance.errors)
             return res.redirect('/hostnames')
         }
         req.flash('sucesso', 'O equipamento foi cadastrado com sucesso!')
         return res.redirect(`/hostnames/index/${hostInstance.hosts._id}`)
-    }catch(err) {
+    } catch (err) {
         res.render('../views/includes/404.ejs')
         console.log('ERRO: ' + err)
     }
 }
 
 exports.cadastro = async (req, res) => {
-    if(!req.params.id){
+    if (!req.params.id) {
         return res.render('../views/includes/404.ejs')
     }
 
     const dados = await Hosts.procurarPeloId(req.params.id)
 
-    if(!dados) {
+    if (!dados) {
         return res.render('../views/includes/404.ejs')
     }
     res.render('../views/hosts.ejs', {
-        titulo: 'Edição de hosts',
+        titulo: 'Sucesso',
         hosts: dados
     })
 }
 
-exports.edicao = async(req, res) => {
-    if(!req.params.id){
+exports.edicao = async (req, res) => {
+    if (!req.params.id) {
         return res.render('../views/includes/404.ejs')
     }
+
+    res.send(`Olá ${req.session.user.email},vamos editar o id ${req.params.id}`)
+}
+
+exports.excluir = (req, res) => {
+    res.send('PÁGINA DE REMOÇÃO')
 }

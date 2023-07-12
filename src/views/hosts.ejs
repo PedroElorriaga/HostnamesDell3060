@@ -8,40 +8,60 @@
       </h1>
       <section class="main-container">
         <div hidden class="logado"></div>
-        <p class="text-centro descricao">Formulário de cadastro de equipamento DELL 3060</p>
 
-        <div class="conteudo-tabela">
+        <% if (hosts._id) { %>
 
-          <%- include('./includes/messages') %>
+          <p class="text-centro descricao">Confirmação de criação de equipamento</p>
 
-            <div class="conteudo-edicao">
-              <div class="formulario-centro edicao">
-                <h4>Insira os dados do equipamento</h4>
-                <% if(hosts._id) { %>
-                  <form action="/hostnames/edit/<%= hosts._id %>" method="POST" class="formulario">
-                    <% } else { %>
-                      <form action="/hostnames/register" method="POST" class="formulario">
-                        <% } %>
-                          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                          <label>Serial Number</label><br>
-                          <input value="<%= hosts.numeroSerie %>" type="text" name="numeroSerie"
-                            placeholder="Número de série"><br>
-                          <label>Hostname</label><br>
-                          <input value="<%= hosts.hostName %>" type="text" name="hostname" placeholder="ACC..."><br>
-                          <label>Mac Address</label><br>
-                          <input value="<%= hosts.mac %>" type="text" name="mac" placeholder="Ex: D0:00..."><br>
-                          <label>Status</label><br>
-                          <% if(!hosts.status) { %>
-                            <input type="radio" name="status" id="remover" value="REMOVIDO">
-                            REMOVIDO
-                            <input type="radio" name="status" id="removido" value="REMOVER" checked> REMOVER<br>
-                            <% } else { %>
-                              <input value="<%= hosts.status %>" type="text" name="status" disabled><br>
+          <% } else { %>
+
+            <p class="text-centro descricao">Formulário de cadastro de equipamento DELL 3060</p>
+
+            <% } %>
+
+              <div class="conteudo-tabela">
+
+                <%- include('./includes/messages') %>
+
+                  <div class="conteudo-edicao">
+                    <div class="formulario-centro edicao">
+
+                      <% if(hosts._id) { %>
+
+                        <h4>Verifique se os dados estão corretos</h4>
+
+                        <form action="/" method="GET" class="formulario">
+                          <% } else { %>
+
+                            <h4>Insira os dados do equipamento</h4>
+
+                            <form action="/hostnames/register" method="POST" class="formulario">
                               <% } %>
-                                <button type="submit">Salvar</button>
-                      </form>
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <label>Serial Number</label><br>
+                                <input value="<%= hosts.numeroSerie %>" type="text" name="numeroSerie"
+                                  placeholder="Número de série"><br>
+                                <label>Hostname</label><br>
+                                <input value="<%= hosts.hostName %>" type="text" name="hostname"
+                                  placeholder="ACC..."><br>
+                                <label>Mac Address</label><br>
+                                <input value="<%= hosts.mac %>" type="text" name="mac" placeholder="Ex: D0:00..."><br>
+                                <label>Status</label><br>
+                                <% if(!hosts.status) { %>
+                                  <input type="radio" name="status" id="remover" value="REMOVIDO">
+                                  REMOVIDO
+                                  <input type="radio" name="status" id="removido" value="REMOVER" checked> REMOVER<br>
+                                  <% } else { %>
+                                    <input value="<%= hosts.status %>" type="text" name="status" disabled><br>
+                                    <% } %>
+                                      <% if(hosts._id) { %>
+                                        <button type="submit">Confirmar</button>
+                                        <% } else {%>
+                                          <button type="submit">Salvar</button>
+                                          <% } %>
+                            </form>
+                    </div>
+                  </div>
               </div>
-            </div>
-        </div>
       </section>
       <%- include('./includes/footer.ejs') %>

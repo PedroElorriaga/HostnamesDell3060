@@ -77,6 +77,11 @@ class Hosts {
         const dados = await HostsModel.findById(id)
         return dados
     }
+
+    static async buscarEquipamentos() {
+        const dados = await HostsModel.find()
+        return dados
+    }
 }
 
 module.exports = Hosts
