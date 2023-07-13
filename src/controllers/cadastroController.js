@@ -20,6 +20,6 @@ exports.register = async (req, res) => {
 
     } catch (err) {
         console.log(err)
-        res.render('../views/includes/404.ejs')
+        res.render('includes/404')
     }
 }

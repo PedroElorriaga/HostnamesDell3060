@@ -1,3 +1,4 @@
+const { Console } = require('console')
 const Hosts = require('../models/HostsModel')
 const path = require('path')
 
@@ -17,36 +18,25 @@ exports.register = async (req, res) => {
             req.flash('errors', hostInstance.errors)
             return res.redirect('/hostnames')
         }
-        req.flash('sucesso', 'O equipamento foi cadastrado com sucesso!')
-        return res.redirect(`/hostnames/index/${hostInstance.hosts._id}`)
+        req.flash('sucesso', `O equipamento ${req.body.numeroSerie} foi cadastrado com sucesso!`)
+        return res.redirect(`/`)
     } catch (err) {
-        res.render('../views/includes/404.ejs')
+        res.render('includes/404')
         console.log('ERRO: ' + err)
     }
 }
 
-exports.cadastro = async (req, res) => {
+exports.edicao = async (req, res) => {
     if (!req.params.id) {
-        return res.render('../views/includes/404.ejs')
+        return res.render('includes/404')
     }
 
     const dados = await Hosts.procurarPeloId(req.params.id)
 
-    if (!dados) {
-        return res.render('../views/includes/404.ejs')
-    }
-    res.render('../views/hosts.ejs', {
-        titulo: 'Sucesso',
+    res.render('hosts', {
+        titulo: 'Edição de equipamento',
         hosts: dados
     })
-}
-
-exports.edicao = async (req, res) => {
-    if (!req.params.id) {
-        return res.render('../views/includes/404.ejs')
-    }
-
-    res.send(`Olá ${req.session.user.email},vamos editar o id ${req.params.id}`)
 }
 
 exports.excluir = (req, res) => {

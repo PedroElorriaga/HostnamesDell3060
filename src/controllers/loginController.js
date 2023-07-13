@@ -1,7 +1,7 @@
 const Login = require('../models/CadastroModel')
 
 exports.index = (req, res) => {
-    if (req.session.user) return res.render('../views/logado.ejs')
+    if (req.session.user) return res.render('logado')
 
     return res.render('login', {
         titulo: 'Login',
@@ -23,7 +23,7 @@ exports.login = async (req, res) => {
 
     } catch (err) {
         console.log(err)
-        res.render('../views/includes/404.ejs')
+        res.render('includes/404')
     }
 }
 

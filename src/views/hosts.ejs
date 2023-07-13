@@ -30,7 +30,7 @@
 
                         <h4>Verifique se os dados estão corretos</h4>
 
-                        <form action="/" method="GET" class="formulario">
+                        <form action="/hostnames/edit/<%= hosts._id %>" method="POST" class="formulario">
                           <% } else { %>
 
                             <h4>Insira os dados do equipamento</h4>
@@ -45,15 +45,18 @@
                                 <input value="<%= hosts.hostName %>" type="text" name="hostname"
                                   placeholder="ACC..."><br>
                                 <label>Mac Address</label><br>
-                                <input value="<%= hosts.mac %>" type="text" name="mac" placeholder="Ex: D0:00..."><br>
-                                <label>Status</label><br>
-                                <% if(!hosts.status) { %>
-                                  <input type="radio" name="status" id="remover" value="REMOVIDO">
-                                  REMOVIDO
-                                  <input type="radio" name="status" id="removido" value="REMOVER" checked> REMOVER<br>
+                                <% if(hosts._id) { %>
+                                  <input value="<%= hosts.mac %>" type="text" name="mac" placeholder="Ex: D0:00..."
+                                    disabled><br>
                                   <% } else { %>
-                                    <input value="<%= hosts.status %>" type="text" name="status" disabled><br>
+                                    <input value="<%= hosts.mac %>" type="text" name="mac"
+                                      placeholder="Ex: D0:00..."><br>
                                     <% } %>
+                                      <label>Status</label><br>
+                                      <input type="radio" name="status" id="remover" value="REMOVIDO">
+                                      REMOVIDO
+                                      <input type="radio" name="status" id="removido" value="REMOVER" checked>
+                                      REMOVER<br>
                                       <% if(hosts._id) { %>
                                         <button type="submit">Confirmar</button>
                                         <% } else {%>
