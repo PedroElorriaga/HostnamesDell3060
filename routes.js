@@ -27,6 +27,7 @@ route.post('/cadastro/register', cadastroController.register)
 route.get('/hostnames', usuarioEditor, hostsController.index)
 route.post('/hostnames/register', usuarioEditor, hostsController.register)
 route.get('/hostnames/edit/:id', usuarioEditor, hostsController.edicao)
+route.post('/hostnames/edit/update/:id', usuarioEditor, hostsController.edicaoUpdate)
 route.get('/hostnames/remove/:id', usuarioEditor, hostsController.excluir)
 
 
