@@ -35,8 +35,8 @@
                         <td><%= equipamento.hostName %></td>
                         <td class="status"><%= equipamento.status %></td>
                         <% if(user) { %>
-                        <td><a href="/hostnames/edit/<%= equipamento._id %>">Editar</a></td>
-                        <td><a href="/hostnames/remove/<%= equipamento._id %>">Excluir</a></td>
+                        <td><a class="editar" href="/hostnames/edit/<%= equipamento._id %>">Editar</a></td>
+                        <td><a class="excluir" href="/hostnames/remove/<%= equipamento._id %>">Excluir</a></td>
                         <% } %>
                       </tr>
                       <% }) %>

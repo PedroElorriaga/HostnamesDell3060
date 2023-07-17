@@ -96,12 +96,33 @@ img {
 .main-container .text-centro.descricao {
     text-align: center;
     letter-spacing: var(--letter-spacing);
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
 .conteudo-tabela {
     text-align: center;
     padding: 10px;
+}
+
+.tabela-centro.content .editar {
+    color: rgb(73, 167, 230);
+}
+
+.tabela-centro.content .editar:hover {
+    color: gray;
+}
+
+.tabela-centro.content .excluir {
+    background-color: var(--second-color);
+    border-radius: 80px;
+    font-size: 14px;
+    padding: 15px;
+    /* font-weight: bold; */
+    transition: all 300ms ease-in-out;
+}
+
+.tabela-centro.content .excluir:hover {
+    background-color: rgba(88, 56, 109, 0.514);
 }
 
 td button {
@@ -129,7 +150,7 @@ td button:hover {
     background-color: rgba(250, 128, 114, 0.315);
     width: 50%;
     height: 4em;
-    margin: -20px auto;
+    margin: -30px auto;
     border: 1px solid rgba(250, 128, 114, 0.452);
     border-radius: 3px;
     position: relative;
