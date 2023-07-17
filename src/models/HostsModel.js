@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 
 const HostsSchema = new mongoose.Schema({
     numeroSerie: { type: String, required: true },
-    hostName: { type: String, required: true },
+    hostName: { type: String, required: false },
     mac: { type: String, required: false },
     status: { type: String, required: true },
     criadoEm: { type: Date, default: Date.now() }
@@ -38,14 +38,13 @@ class Hosts {
             this.errors.push('O SN não pode estar vázio')
         }
 
-        if (this.body.mac == '') {
-            this.errors.push('O Mac Address não pode estar vázio')
-            return
-        }
-
         const macDuplicado = await HostsModel.findOne({ mac: this.body.mac })
 
         if (macDuplicado) {
+            if (macDuplicado.mac == '') {
+                return
+            }
+
             if (this.body.mac == macDuplicado.mac) {
                 this.errors.push('O Mac Address já está cadastrado')
                 return
@@ -67,6 +66,31 @@ class Hosts {
             mac: this.body.mac,
             status: this.body.status
         }
+    }
+
+    async atualizarEquipamento(id) {
+        if (typeof id !== 'string') {
+            return
+        }
+
+        if (this.errors > 0) {
+            return
+        }
+
+        this.contato = await HostsModel.findByIdAndUpdate(id, this.body, { new: true })
+    }
+
+    async deletarEquipamento(id) {
+        if (typeof id !== 'string') {
+            return
+        }
+
+        if (!id) {
+            this.errors.push('Id não existe')
+            return
+        }
+
+        await HostsModel.findByIdAndDelete(id)
     }
 
     static async procurarPeloId(id) {
