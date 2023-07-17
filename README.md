@@ -13,6 +13,7 @@
      <li>NodeJs</li>
      <li>Express</li>
      <li>Webpack</li>
+     <li>MongoDB</li>
      <li>Babel</li>
 </ul>
 
@@ -20,6 +21,25 @@
 <p>Sistema de organização e gerenciamento de equipamentos Dell 3060</p>
 <p>Projeto desenvolvido no padrão <b>MVC</b> ( model, view, controller ), para melhor manutenção de futuras atualizações</p>
 
+<br>
 <h3>Download:</h3>
 <p>Você pode baixar o programa no link abaixo:</p>
-<a href="https://github.com/PedroElorriaga/HostnamesDell3060/archive/refs/heads/main.zip">DOWNLOAD</a>
+<p>Download: <a text-transform="none" href="https://github.com/PedroElorriaga/HostnamesDell3060/archive/refs/heads/main.zip">:file_folder:</a></p>
+
+<br>
+<p>Ou você pode clonar o projeto em seu computador pelo cmd:</p>
+<p></p>
+
+     clone https://github.com/PedroElorriaga/HostnamesDell3060.git
+
+<br>
+
+<h3>Instalações: </h3>
+<p>Para iniciar o projeto antes precisamos efetuar as instalações das bibliotecas</p>
+
+     npm i --save
+
+<br>
+<p>Criaremos a pasta .env para conectar com a base de dados no MongoDB: </p>
+
+     CONNECTIONSTRING = mongodb+srv://<user>:<password>@hostnamesaccenture.vnus2dd.mongodb.net/?retryWrites=true&w=majority
