@@ -35,12 +35,12 @@ img {
 }
 
 .nav-content ul {
-    padding: 14px;
+    padding: 10px;
     position: relative;
 }
 
 .nav-content ul li {
-    margin-left: 20px;
+    margin-left: 10px;
     padding: 10px;
     cursor: pointer;
     display: inline;
@@ -48,17 +48,30 @@ img {
 
 .nav-content ul li a {
     font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-content ul .login {
+    right: 180px;
+    top: 0;
+    position: absolute;
+    cursor: default;
+}
+
+.nav-content ul .login a {
+    color: white;
+    text-transform: uppercase;
 }
 
 .nav-content ul .links:hover {
     transition: all 200ms ease-in-out;
     background-color: rgba(128, 128, 128, 0.119);
-    border-radius: 15px;
+    border-radius: 2px;
 }
 
 .nav-content ul .logo-name {
     right: 0;
-    top: 4px;
+    top: 0;
     position: absolute;
     cursor: default;
 }
@@ -74,7 +87,7 @@ img {
 
 .nav-content ul .logout {
     right: 180px;
-    top: 4px;
+    top: 0;
     position: absolute;
     cursor: default;
 }
@@ -313,132 +326,6 @@ td button:hover {
 }
 
 
-/* MEDIA FORMULÁRIOS */
-
-/* TODO MEDIA QUERY */
-@media (max-height: 817px) {
-
-    .main-container {
-        font-size: 14px;
-    }
-
-    .formulario-centro.login {
-        background-color: rgba(88, 56, 109, 0.103);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 30px;
-        border-radius: 3px;
-        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
-    }
-
-    .conteudo-cadastro {
-        position: absolute;
-        top: 71%;
-        left: 50%;
-        transform: translate(-50%);
-    }
-
-}
-
-@media (max-height: 719px) {
-
-    .main-container {
-        font-size: 14px;
-    }
-
-    .formulario-centro.login {
-        background-color: rgba(88, 56, 109, 0.103);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -30%);
-        padding: 30px;
-        border-radius: 3px;
-        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
-    }
-
-    .conteudo-cadastro {
-        position: absolute;
-        top: 82%;
-        left: 50%;
-        transform: translate(-50%);
-    }
-
-}
-
-@media (max-height: 582px) {
-
-    .main-container {
-        font-size: 14px;
-    }
-
-    .formulario-centro.login {
-        background-color: rgba(88, 56, 109, 0.103);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -56%);
-        padding: 30px;
-        border-radius: 3px;
-        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
-        margin-top: 100px;
-    }
-
-    .conteudo-cadastro {
-        position: absolute;
-        top: 92%;
-        left: 50%;
-        transform: translate(-50%);
-    }
-
-    .main-container h1 {
-        margin-top: -10px;
-    }
-
-    .conteudo-tabela .alerta-centro.erro {
-        background-color: rgba(250, 128, 114, 0.315);
-        width: 50%;
-        height: 4em;
-        margin: -24px auto;
-        border: 1px solid rgba(250, 128, 114, 0.452);
-        border-radius: 3px;
-        position: relative;
-    }
-
-    .formulario-centro.login-cadastro {
-        background-color: rgba(88, 56, 109, 0.103);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -25%);
-        padding: 30px;
-        border-radius: 3px;
-        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
-    }
-
-    .conteudo-cadastro.cadastro-page {
-        position: absolute;
-        top: 87%;
-        left: 50%;
-        transform: translate(-50%);
-    }
-
-    .alerta-centro.sucesso {
-        background-color: rgba(114, 250, 114, 0.26);
-        width: 50%;
-        height: 4em;
-        margin: -24px auto;
-        border: 1px solid rgba(114, 250, 114, 0.678);
-        border-radius: 3px;
-        position: relative;
-        margin-bottom: 20px;
-    }
-
-}
-
-
 /* EDIÇÃO/CADASTRO EQUIPAMENTOS */
 
 
@@ -492,4 +379,99 @@ td button:hover {
 
 .page-404 h5:hover {
     color: var(--primary-color);
+}
+
+
+/* MEDIA FORMULÁRIOS */
+
+@media (max-width: 1453px) {
+
+    .main-container {
+        font-size: 14px;
+    }
+
+    .formulario-centro.login {
+        background-color: rgba(88, 56, 109, 0.103);
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -56%);
+        padding: 30px;
+        border-radius: 3px;
+        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+        margin-top: 100px;
+    }
+
+    .conteudo-cadastro {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .main-container h1 {
+        margin-top: -10px;
+    }
+
+    .conteudo-tabela .alerta-centro.erro {
+        background-color: rgba(250, 128, 114, 0.315);
+        width: 50%;
+        height: 4em;
+        margin: -41px auto;
+        border: 1px solid rgba(250, 128, 114, 0.452);
+        border-radius: 3px;
+        position: relative;
+    }
+
+    .formulario-centro.login-cadastro {
+        background-color: rgba(88, 56, 109, 0.103);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        padding: 30px;
+        border-radius: 3px;
+        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+    }
+
+    .conteudo-cadastro.cadastro-page {
+        position: absolute;
+        top: 87%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .alerta-centro.sucesso {
+        background-color: rgba(114, 250, 114, 0.26);
+        width: 50%;
+        height: 4em;
+        margin: -41px auto;
+        border: 1px solid rgba(114, 250, 114, 0.678);
+        border-radius: 3px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .logado .alerta-centro.sucesso {
+        background-color: rgba(114, 250, 114, 0.26);
+        width: 50%;
+        height: 4em;
+        margin: -28px auto;
+        border: 1px solid rgba(114, 250, 114, 0.678);
+        border-radius: 3px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .conteudo-edicao {
+        background-color: rgba(88, 56, 109, 0.103);
+        position: absolute;
+        top: 67%;
+        left: 50%;
+        transform: translate(-50%, -53%);
+        padding: 12px;
+        border-radius: 3px;
+        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+    }
+
 }

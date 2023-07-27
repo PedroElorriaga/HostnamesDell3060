@@ -17,27 +17,35 @@
           <%- include('./includes/messages.ejs')%>
 
             <% } else { %>
-              <div hidden class="logado"></div>
-              <p class="text-centro descricao">Olá <b>
-                  <%= user.email %>
-                </b>, a edição agora está habilitada</p>
+              <div class="logado">
+                <p class="text-centro descricao">Olá <b>
+                    <%= user.email %>
+                  </b>, a edição agora está habilitada</p>
 
                 <%- include('./includes/messages.ejs')%>
-
+              </div>
               <% } %>
 
                 <div class="tabela-hosts">
                   <table class="tabela-centro content">
                     <% equipamentos.forEach(equipamento=> { %>
                       <tr class="tabela-infos">
-                        <td><%= equipamento.numeroSerie %></td>
-                        <td class="host-info"><%= equipamento.mac %></td>
-                        <td><%= equipamento.hostName %></td>
-                        <td class="status"><%= equipamento.status %></td>
+                        <td>
+                          <%= equipamento.numeroSerie %>
+                        </td>
+                        <td class="host-info">
+                          <%= equipamento.mac %>
+                        </td>
+                        <td>
+                          <%= equipamento.hostName %>
+                        </td>
+                        <td class="status"><%= 
+                          equipamento.status 
+                          %></td>
                         <% if(user) { %>
-                        <td><a class="editar" href="/hostnames/edit/<%= equipamento._id %>">Editar</a></td>
-                        <td><a class="excluir" href="/hostnames/remove/<%= equipamento._id %>">Excluir</a></td>
-                        <% } %>
+                          <td><a class="editar" href="/hostnames/edit/<%= equipamento._id %>">Editar</a></td>
+                          <td><a class="excluir" href="/hostnames/remove/<%= equipamento._id %>">Excluir</a></td>
+                          <% } %>
                       </tr>
                       <% }) %>
                   </table>

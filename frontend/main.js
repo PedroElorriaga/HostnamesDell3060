@@ -10,7 +10,7 @@ for (let i = 0; i < status.length; i++) {
     let temp = status[i]
     if (temp.innerHTML == "REMOVIDO") {
         temp.style.color = '#32CD32'
-    } else {
+    } else if (temp.innerHTML == 'REMOVER') {
         temp.style.color = 'red'
     }
 }
